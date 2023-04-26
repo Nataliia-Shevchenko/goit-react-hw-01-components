@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import {ProfileCont, ProfilePic, ProfileTitle} from './Profile.styled'
 
 export const Profile = ({
   username,
@@ -10,10 +11,10 @@ export const Profile = ({
   likes,
 }) => {
   return (
-    <div className="profile">
+    <ProfileCont>
       <div className="description">
-        <img src={avatar} alt="User avatar" className="avatar" />
-        <p className="name">{username}</p>
+        <ProfilePic src={avatar} alt="User avatar" className="avatar"></ProfilePic>
+        <ProfileTitle className="name">{username}</ProfileTitle>
         <p className="tag">{tag}</p>
         <p className="location">{location}</p>
       </div>
@@ -32,7 +33,7 @@ export const Profile = ({
           <span className="quantity">{likes}</span>
         </li>
       </ul>
-    </div>
+    </ProfileCont>
   );
 };
 
