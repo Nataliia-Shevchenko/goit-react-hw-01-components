@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 import {
-  StatisticsList, StatisticsSection, StatisticsItem
+  StatisticsList, StatisticTitle, StatisticsSection, StatisticsItem
 } from './Statistics.styled';
 
 export const Statistics = ({ title, stats }) => {
   return (
     <StatisticsSection>
-      {title && (<h2 className="title">{title}</h2>)}
+      {title && (<StatisticTitle>{title}</StatisticTitle>)}
 
       <StatisticsList>
         {stats.map(event => (

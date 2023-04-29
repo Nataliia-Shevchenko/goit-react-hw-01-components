@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types';
-import { FriendSec } from './FriendList.styled';
+import { FriendSec, FriendItem, StatusElement } from './FriendList.styled';
 
 export const FriendList = ({ friends }) => {
   return (
     <FriendSec >
       {friends.map(event => (
-        <li key={event.id} class="item">
-          <span className="status">{event.isOnline}</span>
+        <FriendItem key={event.id} class="item">
+          <StatusElement id={event.isOnline}></StatusElement>
           <img className="avatar" src={event.avatar} alt="User avatar" width="48" />
           <p className="name">{event.name}</p>
-        </li>
+        </FriendItem>
       ))}
     </FriendSec >
   );
