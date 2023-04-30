@@ -7,8 +7,8 @@ export const ProfileCont = styled.div`
   align-items: center;
 
   width: 400px;
-  height: 400px;
-  padding: 15px;
+  min-height: 400px;
+  padding: 30px;
   margin-left: 20px;
   margin-top: 20px;
   margin-bottom: 20px;

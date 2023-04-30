@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 
 export const FriendSec = styled.ul`
   list-style: none;
+  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,13 +10,6 @@ export const FriendSec = styled.ul`
   gap: 10px;
   width: 500px;
   margin-left: 20px;
-`;
-
-export const StatusElement = styled.span`
-  width: 25px;
-  height: 25px;
-  border-radius: 25px;
-  background-color: ${props => (props.status ? 'green' : 'red')};
 `;
 
 export const FriendItem = styled.li`
@@ -29,4 +23,11 @@ export const FriendItem = styled.li`
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
+`;
+
+export const StatusElement = styled.span`
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+  background-color: ${props => (props.status ? 'green' : 'red')};
 `;
