@@ -3,11 +3,11 @@ import styled from '@emotion/styled';
 export const StatisticsSection = styled.section`
   margin-left: 20px;
   margin-bottom: 20px;
-  width: 600px;
+  min-width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 `;
 
 export const StatisticTitle = styled.h2`

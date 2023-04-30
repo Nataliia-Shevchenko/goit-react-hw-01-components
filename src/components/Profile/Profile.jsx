@@ -4,44 +4,32 @@ import {
   ProfilePic,
   ProfileTitle,
   ProfileStats,
+  ProfileStatsItem,
 } from './Profile.styled';
 
-export const Profile = ({
-  username,
-  tag,
-  location,
-  avatar,
-  stats,
-  // followers,
-  // views,
-  // likes,
-}) => {
+export const Profile = ({ username, tag, location, avatar, stats }) => {
   return (
     <ProfileCont>
       <div className="description">
-        <ProfilePic
-          src={avatar}
-          alt="User avatar"
-          className="avatar"
-        ></ProfilePic>
-        <ProfileTitle className="name">{username}</ProfileTitle>
-        <p className="tag">{tag}</p>
+        <ProfilePic src={avatar} alt="User avatar"></ProfilePic>
+        <ProfileTitle>{username}</ProfileTitle>
+        <p className="tag">@{tag}</p>
         <p className="location">{location}</p>
       </div>
 
       <ProfileStats>
-        <li>
+        <ProfileStatsItem>
           <span className="label">Followers</span>
           <span className="quantity">{stats.followers}</span>
-        </li>
-        <li>
+        </ProfileStatsItem>
+        <ProfileStatsItem>
           <span className="label">Views</span>
           <span className="quantity">{stats.views}</span>
-        </li>
-        <li>
+        </ProfileStatsItem>
+        <ProfileStatsItem>
           <span className="label">Likes</span>
           <span className="quantity">{stats.likes}</span>
-        </li>
+        </ProfileStatsItem>
       </ProfileStats>
     </ProfileCont>
   );
@@ -53,7 +41,4 @@ Profile.propTypes = {
   location: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired,
   stats: PropTypes.objectOf(PropTypes.number),
-  // followers: PropTypes.number.isRequired,
-  // views: PropTypes.number.isRequired,
-  // likes: PropTypes.number.isRequired,
 };

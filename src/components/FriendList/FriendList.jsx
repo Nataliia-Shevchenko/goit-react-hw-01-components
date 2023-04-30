@@ -3,18 +3,22 @@ import { FriendSec, FriendItem, StatusElement } from './FriendList.styled';
 
 export const FriendList = ({ friends }) => {
   return (
-    <FriendSec >
+    <FriendSec>
       {friends.map(event => (
-        <FriendItem key={event.id} class="item">
-          <StatusElement id={event.isOnline}></StatusElement>
-          <img className="avatar" src={event.avatar} alt="User avatar" width="48" />
+        <FriendItem key={event.id}>
+          <StatusElement status={event.isOnline}></StatusElement>
+          <img
+            className="avatar"
+            src={event.avatar}
+            alt="User avatar"
+            width="48"
+          />
           <p className="name">{event.name}</p>
         </FriendItem>
       ))}
-    </FriendSec >
+    </FriendSec>
   );
 };
-
 
 FriendList.propTypes = {
   friends: PropTypes.arrayOf(
