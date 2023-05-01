@@ -17,11 +17,11 @@ export const TransactionHistory = ({ items }) => {
       </TransTableHead>
 
       <tbody>
-        {items.map(event => (
-          <tr key={event.id}>
-            <TransTableData>{event.type}</TransTableData>
-            <TransTableData>{event.amount}</TransTableData>
-            <TransTableData>{event.currency}</TransTableData>
+        {items.map(item => (
+          <tr key={item.id}>
+            <TransTableData>{item.type}</TransTableData>
+            <TransTableData>{item.amount}</TransTableData>
+            <TransTableData>{item.currency}</TransTableData>
           </tr>
         ))}
       </tbody>
@@ -30,12 +30,12 @@ export const TransactionHistory = ({ items }) => {
 };
 
 TransactionHistory.propTypes = {
-  friends: PropTypes.arrayOf(
+  items: PropTypes.arrayOf(
     PropTypes.exact({
       id: PropTypes.string.isRequired,
       type: PropTypes.string.isRequired,
-      amount: PropTypes.number.isRequired,
+      amount: PropTypes.string.isRequired,
       currency: PropTypes.string.isRequired,
-    })
-  ),
+    }).isRequired
+  ).isRequired,
 };

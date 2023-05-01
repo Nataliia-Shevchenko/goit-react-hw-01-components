@@ -12,10 +12,10 @@ export const Statistics = ({ title, stats }) => {
       {title && <StatisticTitle>{title}</StatisticTitle>}
 
       <StatisticsList>
-        {stats.map(event => (
-          <StatisticsItem key={event.id}>
-            <span className="label">{event.label}</span>
-            <span className="percentage">{event.percentage}%</span>
+        {stats.map(stat => (
+          <StatisticsItem key={stat.id}>
+            <span className="label">{stat.label}</span>
+            <span className="percentage">{stat.percentage}%</span>
           </StatisticsItem>
         ))}
       </StatisticsList>
@@ -30,6 +30,6 @@ Statistics.propTypes = {
       id: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
       percentage: PropTypes.number.isRequired,
-    })
-  ),
+    }).isRequired
+  ).isRequired,
 };
